@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/iamxenon404/Demmiz/issues"
   },
-  "homepage": "https://github.com/iamxenon404/Demmiz#readme"
+  "homepage": "https://github.com/iamxenon404/Demmiz#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.0"
+  }
 }
