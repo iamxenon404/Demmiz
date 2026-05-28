@@ -25,9 +25,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-    <Header />
-    <Footer />
-    </>
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Header />
+        
+        {/* Crucial: This renders your active page.tsx files */}
+        <main>{children}</main> 
+        
+        <Footer />
+      </body>
+    </html>
   );
 }
