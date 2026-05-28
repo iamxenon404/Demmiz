@@ -32,7 +32,7 @@ const TrustBar = () => {
   ];
 
   return (
-    <section className="bg-white border-b border-neutral-100 py-10 px-6 md:px-12">
+    <section className="bg-cyan-950 border-b border-neutral-100 py-10 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
         {features.map((item, index) => (
           <div key={index} className="flex flex-col items-center text-center max-w-sm mx-auto">
