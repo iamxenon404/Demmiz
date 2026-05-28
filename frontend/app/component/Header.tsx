@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <header className="w-full fixed top-0 left-0 z-50 font-sans">
       {/* Top Announcement Bar */}
-      <div className="bg-neutral-900 text-neutral-100 text-xs py-2 px-4 text-center tracking-widest uppercase font-medium">
-        Free premium sample with every order over $75 • Fast Worldwide Shipping
+         <div className="bg-neutral-900 text-neutral-100 text-xs py-2 px-4 text-center tracking-widest uppercase font-medium">
+        Buy 3 or more of  the same piece and get 10% off your order! 
       </div>
 
       {/* Main Navigation Bar */}
