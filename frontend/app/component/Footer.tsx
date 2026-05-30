@@ -66,10 +66,10 @@ const Footer = () => {
         <div>
           <h5 className="text-[10px] uppercase tracking-[0.3em] text-purple-700 dark:text-amber-400 font-bold mb-5 font-mono">01 / Shop</h5>
           <ul className="space-y-3 text-[13px] tracking-wide font-light text-zinc-500 dark:text-zinc-400">
-            <li><a href="/shop" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">All Fragrances</a></li>
-            <li><a href="/brands" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">New Arrivals</a></li>
-            <li><a href="/decants" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">Best Sellers</a></li>
-            <li><a href="/samples" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">Decants & Samples</a></li>
+            <li><a href="/shop" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">All Fragrances</a></li>
+            <li><a href="/brands" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">New Arrivals</a></li>
+            <li><a href="/decants" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">Best Sellers</a></li>
+            <li><a href="/samples" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">Decants & Samples</a></li>
           </ul>
         </div>
 
@@ -77,9 +77,9 @@ const Footer = () => {
         <div>
           <h5 className="text-[10px] uppercase tracking-[0.3em] text-purple-700 dark:text-amber-400 font-bold mb-5 font-mono">02 / Company</h5>
           <ul className="space-y-3 text-[13px] tracking-wide font-light text-zinc-500 dark:text-zinc-400">
-            <li><a href="/about" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">Our Story</a></li>
-            <li><a href="/authenticity" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">Authenticity Guarantee</a></li>
-            <li><a href="/journal" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">The Scent Journal</a></li>
+            <li><a href="/about" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">Our Story</a></li>
+            <li><a href="/authenticity" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">Authenticity Guarantee</a></li>
+            <li><a href="/journal" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">The Scent Journal</a></li>
           </ul>
         </div>
 
@@ -87,10 +87,10 @@ const Footer = () => {
         <div>
           <h5 className="text-[10px] uppercase tracking-[0.3em] text-purple-700 dark:text-amber-400 font-bold mb-5 font-mono">03 / Support</h5>
           <ul className="space-y-3 text-[13px] tracking-wide font-light text-zinc-500 dark:text-zinc-400">
-            <li><a href="/contact" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">Contact Support</a></li>
-            <li><a href="/shipping" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">Shipping & Delivery</a></li>
-            <li><a href="/returns" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">Returns & Exchanges</a></li>
-            <li><a href="/faq" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors relative block py-0.5">FAQs</a></li>
+            <li><a href="/contact" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">Contact Support</a></li>
+            <li><a href="/shipping" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">Shipping & Delivery</a></li>
+            <li><a href="/returns" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">Returns & Exchanges</a></li>
+            <li><a href="/faq" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors relative block py-0.5">FAQs</a></li>
           </ul>
         </div>
 
@@ -98,9 +98,9 @@ const Footer = () => {
         <div>
           <h5 className="text-[10px] uppercase tracking-[0.3em] text-purple-700 dark:text-amber-400 font-bold mb-5 font-mono">04 / Social</h5>
           <ul className="space-y-3 text-[13px] tracking-wide font-light text-zinc-500 dark:text-zinc-400">
-            <li><a href="https://instagram.com" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors flex items-center gap-1 py-0.5" target="_blank" rel="noreferrer">Instagram <ArrowUpRight className="w-3 h-3 opacity-60" /></a></li>
-            <li><a href="https://tiktok.com" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors flex items-center gap-1 py-0.5" target="_blank" rel="noreferrer">TikTok <ArrowUpRight className="w-3 h-3 opacity-60" /></a></li>
-            <li><a href="https://pinterest.com" className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors flex items-center gap-1 py-0.5" target="_blank" rel="noreferrer">Pinterest <ArrowUpRight className="w-3 h-3 opacity-60" /></a></li>
+            <li><a href="https://instagram.com" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors flex items-center gap-1 py-0.5" target="_blank" rel="noreferrer">Instagram <ArrowUpRight className="w-3 h-3 opacity-60" /></a></li>
+            <li><a href="https://tiktok.com" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors flex items-center gap-1 py-0.5" target="_blank" rel="noreferrer">TikTok <ArrowUpRight className="w-3 h-3 opacity-60" /></a></li>
+            <li><a href="https://pinterest.com" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors flex items-center gap-1 py-0.5" target="_blank" rel="noreferrer">Pinterest <ArrowUpRight className="w-3 h-3 opacity-60" /></a></li>
           </ul>
         </div>
 
@@ -117,11 +117,11 @@ const Footer = () => {
           
           {/* Trust Matrix Line Indicators */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-zinc-500 dark:text-zinc-400 text-[9px] uppercase tracking-[0.2em] font-medium">
-            <span className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors cursor-pointer">SECURE CHECKOUT</span>
+            <span className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors cursor-pointer">SECURE CHECKOUT</span>
             <span className="text-zinc-200 dark:text-zinc-800 font-light">/</span>
-            <span className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors cursor-pointer">BUYER PROTECTED</span>
+            <span className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors cursor-pointer">BUYER PROTECTED</span>
             <span className="text-zinc-200 dark:text-zinc-800 font-light">/</span>
-            <span className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors cursor-pointer">INSURED SHIPPING</span>
+            <span className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors cursor-pointer">INSURED SHIPPING</span>
           </div>
         </div>
       </div>
