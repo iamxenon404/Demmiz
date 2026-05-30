@@ -41,12 +41,13 @@ const Header = () => {
         
         {/* Brand Identity: Stacked Luxury Serif Typeface */}
         <div className="flex items-baseline gap-3">
-          <a 
-            href="/" 
-            className="text-2xl md:text-3xl font-serif font-light tracking-[0.2em] uppercase text-zinc-900 dark:text-zinc-50 hover:text-purple-700 dark:hover:text-purple-400 transition-colors duration-300 dynamic-serif"
-          >
-            demmiz
-          </a>
+         <a 
+  href="/" 
+  className="text-xl md:text-2xl font-black tracking-[0.5rem]  text-zinc-900 dark:text-zinc-50 hover:text-purple-700 dark:hover:text-amber-400 transition-colors duration-300"
+  style={{ fontFamily: "'Syncopate', 'Montserrat', sans-serif" }}
+>
+  Demmiz
+</a>
           <span className="hidden sm:inline-block text-[9px] tracking-[0.4em] uppercase font-semibold text-amber-500 dark:text-amber-400/90 [word-spacing:4px]">
             Scent Hub
           </span>
