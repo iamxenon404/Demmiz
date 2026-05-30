@@ -112,7 +112,7 @@ const Footer = () => {
       <div className="border-t border-zinc-100 dark:border-zinc-900 text-zinc-400 dark:text-zinc-500 text-[11px] font-light tracking-wider py-10 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="font-mono">
-            &copy; {new Date().getFullYear()} DEMMIZ HAUTE PARFUMERIE. ALL RIGHTS RESERVED.
+            &copy; {new Date().getFullYear()} DEMMIZ SCENT HUB. ALL RIGHTS RESERVED.
           </div>
           
           {/* Trust Matrix Line Indicators */}
