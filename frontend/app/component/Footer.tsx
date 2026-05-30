@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="lg:col-span-5 flex flex-col justify-between h-full">
           <div>
             <h3 
-              className="text-4xl md:text-5xl font-normal tracking-wide lowercase text-zinc-900 dark:text-zinc-50 hover:text-purple-700 dark:hover:text-purple-400 transition-colors"
+              className="text-4xl md:text-5xl font-normal tracking-wide lowercase text-zinc-900 dark:text-zinc-50 hover:text-purple-700 dark:hover:text-amber-400 transition-colors"
               style={{ fontFamily: "'Playfair Display', 'Didot', 'Bodoni MT', serif", fontStyle: 'italic' }}
             >
               demmiz scent hub
