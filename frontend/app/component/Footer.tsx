@@ -22,7 +22,7 @@ const Footer = () => {
               demmiz scent hub
             </h3>
             <span className="text-[9px] tracking-[0.4em] uppercase font-bold text-amber-500 dark:text-amber-400 mt-3 block">
-              haute parfumerie
+               haute parfumerie
             </span>
           </div>
           <p className="mt-8 text-sm text-zinc-500 dark:text-zinc-400 max-w-sm leading-relaxed tracking-wide font-light">
