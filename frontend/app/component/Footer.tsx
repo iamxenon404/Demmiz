@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white dark:bg-black text-zinc-800 dark:text-zinc-300 font-sans border-t border-purple-800  dark:border-zinc-900 mt-32 transition-colors duration-300">
+    <footer className="w-full bg-white dark:bg-black text-zinc-800 dark:text-zinc-300 font-sans border-t-2 border-purple-800   dark:border-amber-500 mt-32 transition-colors duration-300">
       
       {/* ========================================================================
         Top Section: Large Brand Impact & Asymmetric Newsletter
