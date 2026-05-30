@@ -41,13 +41,13 @@ const Header = () => {
         
         {/* Brand Identity: Stacked Luxury Serif Typeface */}
         <div className="flex items-baseline gap-3">
-         <a 
-  href="/" 
-  className="text-xl md:text-2xl font-black tracking-[0.5rem]  text-zinc-900 dark:text-zinc-50 hover:text-purple-700 dark:hover:text-amber-400 transition-colors duration-300"
- style={{ fontFamily: "'Playfair Display', 'Didot', 'Bodoni MT', serif", fontStyle: 'italic' }}
->
-  Demmiz
-</a>
+          <a 
+            href="/" 
+            className="text-xl md:text-2xl font-black tracking-[0.5rem] text-zinc-900 dark:text-zinc-50 hover:text-purple-700 dark:hover:text-amber-400 transition-colors duration-300"
+            style={{ fontFamily: "'Playfair Display', 'Didot', 'Bodoni MT', serif", fontStyle: 'italic' }}
+          >
+            Demmiz
+          </a>
           <span className="hidden sm:inline-block text-[9px] tracking-[0.4em] uppercase font-semibold text-purple-700 dark:text-amber-400/90 [word-spacing:4px]">
             Scent Hub
           </span>
@@ -61,6 +61,7 @@ const Header = () => {
               href={link.href} 
               className="hover:text-purple-700 dark:hover:text-zinc-100 transition-colors duration-300 relative py-2 group flex items-center gap-0.5"
             >
+              {/* Index number: Uses Light Purple / Dark Amber natively */}
               <span className="text-[8px] text-purple-700 dark:text-amber-400 font-mono opacity-0 group-hover:opacity-100 transition-opacity absolute -left-4">
                 0{index + 1}
               </span>
@@ -81,7 +82,7 @@ const Header = () => {
             <User className="w-[18px] h-[18px] stroke-[1.1]" />
           </button>
 
-          {/* Cart Icon with a minimal floating badge indicator */}
+          {/* Cart Icon with light purple or dark amber notification badge */}
           <button className="hover:text-purple-700 dark:hover:text-amber-400 p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-all duration-300 relative" aria-label="Shopping Cart">
             <ShoppingBag className="w-[18px] h-[18px] stroke-[1.1]" />
             <span className="absolute top-1 right-1 w-2 h-2 bg-purple-600 dark:bg-amber-400 rounded-full animate-pulse"></span>
@@ -100,23 +101,26 @@ const Header = () => {
       </div>
 
       {/* ========================================================================
-        Mobile Full Screen Overlay Menu
+        Mobile Full Screen Overlay Menu - Transitions from Bottom Up
         ======================================================================== */}
       <div 
-        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-md transition-opacity duration-500 ${
+        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-md transition-opacity duration-500 flex items-end ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsOpen(false)}
       >
         <div 
-          className={`absolute top-0 right-0 w-full max-w-sm h-full bg-white dark:bg-zinc-950 p-8 shadow-[0_0_50px_rgba(0,0,0,0.3)] transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) flex flex-col justify-between ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`w-full bg-white dark:bg-zinc-950 p-8 rounded-t-[2rem] border-t border-zinc-100 dark:border-zinc-900 shadow-[0_-10px_40px_rgba(0,0,0,0.2)] transition-transform duration-500 ease-out flex flex-col justify-between max-h-[85vh] ${
+            isOpen ? 'translate-y-0' : 'translate-y-full'
           }`}
           onClick={(e) => e.stopPropagation()}
         >
           <div>
+            {/* Context/Top Bar Indicator for Bottom Sheets */}
+            <div className="w-12 h-1 bg-zinc-200 dark:bg-zinc-800 rounded-full mx-auto mb-6" />
+
             {/* Drawer Header Controls */}
-            <div className="flex items-center justify-between pb-8 border-b border-zinc-100 dark:border-zinc-900">
+            <div className="flex items-center justify-between pb-6 border-b border-zinc-100 dark:border-zinc-900">
               <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-400">Navigation</span>
               <button 
                 onClick={() => setIsOpen(false)}
@@ -128,26 +132,27 @@ const Header = () => {
             </div>
 
             {/* Drawer Links Stack */}
-            <nav className="flex flex-col space-y-6 pt-12 text-lg font-serif tracking-wide text-zinc-800 dark:text-zinc-100">
+            <nav className="flex flex-col space-y-5 pt-8 text-xl font-serif tracking-wide text-zinc-800 dark:text-zinc-100">
               {navLinks.map((link, index) => (
                 <a 
                   key={link.href}
                   href={link.href} 
-                  className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors duration-300 flex items-center justify-between group" 
+                  className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors duration-300 flex items-center justify-between group py-1" 
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="flex items-baseline gap-4">
-                    <span className="text-xs font-mono text-zinc-400">0{index + 1}</span>
+                    {/* Persistent Brand Secondary Color for Numbers */}
+                    <span className="text-xs font-mono text-purple-700 dark:text-amber-400/80">0{index + 1}</span>
                     {link.label}
                   </span>
-                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-amber-500" />
+                  <ArrowUpRight className="w-4 h-4 text-purple-700 dark:text-amber-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               ))}
             </nav>
           </div>
 
           {/* Drawer Footer Account links */}
-          <div className="pt-8 border-t border-zinc-100 dark:border-zinc-900 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-zinc-400 font-medium">
+          <div className="pt-8 mt-12 border-t border-zinc-100 dark:border-zinc-900 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-zinc-400 font-medium">
             <a href="/account" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors" onClick={() => setIsOpen(false)}>Profile</a>
             <span className="text-zinc-200 dark:text-zinc-800">/</span>
             <a href="/help" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors" onClick={() => setIsOpen(false)}>Concierge</a>
