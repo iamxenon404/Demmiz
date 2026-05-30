@@ -1,123 +1,155 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Search, User, ShoppingBag, Menu, X, ArrowUpRight } from 'lucide-react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll behavior for a more dynamic feel
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Prevent background scroll when mobile drawer is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isOpen]);
+
+  const navLinks = [
+    { label: 'Collection', href: '/shop' },
+    { label: 'Houses', href: '/brands' },
+    { label: 'The Archive', href: '/decants' },
+    { label: 'Editorial', href: '/about' },
+  ];
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 antialiased font-sans selection:bg-amber-500/30">
-      {/* ========================================================================
-        The Main Structural Frame
-        ======================================================================== */}
-      <div className="bg-white/90 dark:bg-purple-950/95 backdrop-blur-md border-b border-purple-950/10 dark:border-amber-500/10 grid grid-cols-12 items-center h-20 px-4 md:px-8 transition-all duration-300">
+    <header 
+      className={`w-full fixed top-0 left-0 z-50 antialiased font-sans transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-zinc-100 dark:border-zinc-900 h-20' 
+          : 'bg-white dark:bg-black h-24'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto h-full px-6 md:px-12 flex items-center justify-between">
         
-        {/* Left Section: Brand Identity */}
-        <div className="col-span-6 md:col-span-3 flex flex-col justify-center h-full border-r-0 md:border-r border-purple-950/5 dark:border-amber-500/5 pr-4">
+        {/* Brand Identity: Stacked Luxury Serif Typeface */}
+        <div className="flex items-baseline gap-3">
           <a 
             href="/" 
-            className="text-xl md:text-2xl font-black tracking-[0.45em] uppercase text-purple-950 dark:text-white hover:text-amber-500 dark:hover:text-amber-400 transition-colors duration-300 leading-none"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            className="text-2xl md:text-3xl font-serif font-light tracking-[0.2em] uppercase text-zinc-900 dark:text-zinc-50 hover:text-purple-700 dark:hover:text-purple-400 transition-colors duration-300 dynamic-serif"
           >
             demmiz
           </a>
-          <span className="text-[7px] tracking-[0.6em] uppercase font-bold text-amber-600 dark:text-amber-400 mt-1.5 opacity-90">
-            h a u t e . p a r f u m
+          <span className="hidden sm:inline-block text-[9px] tracking-[0.4em] uppercase font-semibold text-amber-500 dark:text-amber-400/90 [word-spacing:4px]">
+            Haute Parfum
           </span>
         </div>
 
-        {/* Center Section: Desktop Minimal Inset Navigation */}
-        <nav className="hidden md:flex col-span-6 items-center space-x-10 pl-8 h-full text-[11px] font-bold tracking-[0.25em] text-purple-950/60 dark:text-purple-200/60 lowercase">
-          <a href="/shop" className="hover:text-purple-950 dark:hover:text-white transition-colors duration-300 relative group py-2">
-            / shop all
-            <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-amber-500 dark:bg-amber-400 group-hover:w-full transition-all duration-300 ease-out"></span>
-          </a>
-          <a href="/brands" className="hover:text-purple-950 dark:hover:text-white transition-colors duration-300 relative group py-2">
-            / brands
-            <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-amber-500 dark:bg-amber-400 group-hover:w-full transition-all duration-300 ease-out"></span>
-          </a>
-          <a href="/decants" className="hover:text-purple-950 dark:hover:text-white transition-colors duration-300 relative group py-2">
-            / archive & decants
-            <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-amber-500 dark:bg-amber-400 group-hover:w-full transition-all duration-300 ease-out"></span>
-          </a>
-          <a href="/about" className="hover:text-purple-950 dark:hover:text-white transition-colors duration-300 relative group py-2">
-            / the journal
-            <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-amber-500 dark:bg-amber-400 group-hover:w-full transition-all duration-300 ease-out"></span>
-          </a>
+        {/* Center: Avant-Garde Asymmetrical Navigation */}
+        <nav className="hidden md:flex items-center space-x-10 text-[11px] uppercase tracking-[0.3em] font-medium text-zinc-500 dark:text-zinc-400">
+          {navLinks.map((link, index) => (
+            <a 
+              key={link.href} 
+              href={link.href} 
+              className="hover:text-purple-700 dark:hover:text-zinc-100 transition-colors duration-300 relative py-2 group flex items-center gap-0.5"
+            >
+              <span className="text-[8px] text-amber-500 dark:text-amber-400 font-mono opacity-0 group-hover:opacity-100 transition-opacity absolute -left-4">
+                0{index + 1}
+              </span>
+              {link.label}
+              <span className="absolute bottom-0 right-0 w-0 h-[1px] bg-purple-600 dark:bg-amber-400 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+            </a>
+          ))}
         </nav>
 
-        {/* Right Section: Action Icons */}
-        <div className="col-span-6 md:col-span-3 flex items-center justify-end space-x-1 h-full pl-0 md:pl-4 border-l-0 md:border-l border-purple-950/5 dark:border-amber-500/5">
+        {/* Right Section: Clean Icon Interface */}
+        <div className="flex items-center space-x-3 text-zinc-800 dark:text-zinc-200">
           
-          <button className="hover:text-amber-500 dark:hover:text-amber-400 p-2 rounded-sm transition-all duration-300" aria-label="Search">
-            <Search className="w-4 h-4 stroke-[1.25]" />
+          <button className="hover:text-purple-700 dark:hover:text-amber-400 p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-all duration-300" aria-label="Search">
+            <Search className="w-[18px] h-[18px] stroke-[1.1]" />
           </button>
 
-          <button className="hidden sm:block hover:text-amber-500 dark:hover:text-amber-400 p-2 rounded-sm transition-all duration-300" aria-label="Account">
-            <User className="w-4 h-4 stroke-[1.25]" />
+          <button className="hidden sm:block hover:text-purple-700 dark:hover:text-amber-400 p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-all duration-300" aria-label="Account">
+            <User className="w-[18px] h-[18px] stroke-[1.1]" />
           </button>
 
-          <button className="hover:text-amber-500 dark:hover:text-amber-400 p-2 rounded-sm transition-all duration-300 relative flex items-center gap-1" aria-label="Shopping Cart">
-            <ShoppingBag className="w-4 h-4 stroke-[1.25]" />
-            <span className="text-[10px] font-bold tracking-normal text-purple-950 dark:text-amber-400 mt-0.5">
-              (0)
-            </span>
+          {/* Cart Icon with a minimal floating badge indicator */}
+          <button className="hover:text-purple-700 dark:hover:text-amber-400 p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-all duration-300 relative" aria-label="Shopping Cart">
+            <ShoppingBag className="w-[18px] h-[18px] stroke-[1.1]" />
+            <span className="absolute top-1 right-1 w-2 h-2 bg-purple-600 dark:bg-amber-400 rounded-full animate-pulse"></span>
           </button>
 
-          {/* Mobile Menu Toggle button */}
+          {/* Minimalist Mobile Menu Bar */}
           <button 
-            className="md:hidden text-purple-950 dark:text-amber-400 p-2 hover:opacity-70 transition-opacity ml-1" 
+            className="md:hidden p-2.5 hover:text-purple-700 dark:hover:text-amber-400 transition-colors ml-1" 
             onClick={() => setIsOpen(true)}
             aria-label="Open Menu"
           >
-            <Menu className="w-4 h-4 stroke-[1.25]" />
+            <Menu className="w-5 h-5 stroke-[1.25]" />
           </button>
         </div>
 
       </div>
 
       {/* ========================================================================
-        Mobile Side Overlay Menu Drawer
+        Mobile Full Screen Overlay Menu
         ======================================================================== */}
-      <div className={`fixed inset-0 z-50 bg-purple-950/40 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        <div className={`absolute top-0 right-0 w-72 h-full bg-white dark:bg-purple-950 p-6 shadow-2xl transition-transform duration-300 ease-out flex flex-col justify-between ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          
+      <div 
+        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-md transition-opacity duration-500 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsOpen(false)}
+      >
+        <div 
+          className={`absolute top-0 right-0 w-full max-w-sm h-full bg-white dark:bg-zinc-950 p-8 shadow-[0_0_50px_rgba(0,0,0,0.3)] transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) flex flex-col justify-between ${
+            isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
           <div>
             {/* Drawer Header Controls */}
-            <div className="flex items-center justify-between pb-6 border-b border-purple-950/5 dark:border-amber-500/10">
-              <span className="text-xs font-black tracking-[0.2em] uppercase text-purple-950 dark:text-white">menu</span>
+            <div className="flex items-center justify-between pb-8 border-b border-zinc-100 dark:border-zinc-900">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-400">Navigation</span>
               <button 
                 onClick={() => setIsOpen(false)}
-                className="p-1 text-purple-950 dark:text-amber-400 hover:opacity-70 transition-opacity"
+                className="p-2 text-zinc-800 dark:text-zinc-200 hover:text-purple-700 dark:hover:text-amber-400 transition-colors"
                 aria-label="Close Menu"
               >
-                <X className="w-4 h-4 stroke-[1.5]" />
+                <X className="w-5 h-5 stroke-[1.25]" />
               </button>
             </div>
 
             {/* Drawer Links Stack */}
-            <nav className="flex flex-col space-y-6 pt-8 text-sm font-bold tracking-[0.2em] text-purple-950/70 dark:text-purple-200/70 lowercase">
-              <a href="/shop" className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors" onClick={() => setIsOpen(false)}>
-                / shop all
-              </a>
-              <a href="/brands" className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors" onClick={() => setIsOpen(false)}>
-                / brands
-              </a>
-              <a href="/decants" className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors" onClick={() => setIsOpen(false)}>
-                / archive & decants
-              </a>
-              <a href="/about" className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors" onClick={() => setIsOpen(false)}>
-                / the journal
-              </a>
+            <nav className="flex flex-col space-y-6 pt-12 text-lg font-serif tracking-wide text-zinc-800 dark:text-zinc-100">
+              {navLinks.map((link, index) => (
+                <a 
+                  key={link.href}
+                  href={link.href} 
+                  className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors duration-300 flex items-center justify-between group" 
+                  onClick={() => setIsOpen(false)}
+                >
+                  <span className="flex items-baseline gap-4">
+                    <span className="text-xs font-mono text-zinc-400">0{index + 1}</span>
+                    {link.label}
+                  </span>
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-amber-500" />
+                </a>
+              ))}
             </nav>
           </div>
 
           {/* Drawer Footer Account links */}
-          <div className="pt-6 border-t border-purple-950/5 dark:border-amber-500/10 flex items-center space-x-4 text-xs font-bold tracking-widest text-purple-950/50 dark:text-purple-300/50 lowercase">
-            <a href="/account" className="hover:text-amber-500" onClick={() => setIsOpen(false)}>profile</a>
-            <span>•</span>
-            <a href="/help" className="hover:text-amber-500" onClick={() => setIsOpen(false)}>support</a>
+          <div className="pt-8 border-t border-zinc-100 dark:border-zinc-900 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-zinc-400 font-medium">
+            <a href="/account" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors" onClick={() => setIsOpen(false)}>Profile</a>
+            <span className="text-zinc-200 dark:text-zinc-800">/</span>
+            <a href="/help" className="hover:text-purple-700 dark:hover:text-amber-400 transition-colors" onClick={() => setIsOpen(false)}>Concierge</a>
           </div>
 
         </div>
