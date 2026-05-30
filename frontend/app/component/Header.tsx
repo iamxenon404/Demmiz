@@ -44,7 +44,7 @@ const Header = () => {
          <a 
   href="/" 
   className="text-xl md:text-2xl font-black tracking-[0.5rem]  text-zinc-900 dark:text-zinc-50 hover:text-purple-700 dark:hover:text-amber-400 transition-colors duration-300"
-  style={{ fontFamily: "'Syncopate', 'Montserrat', sans-serif" }}
+ style={{ fontFamily: "'Playfair Display', 'Didot', 'Bodoni MT', serif", fontStyle: 'italic' }}
 >
   Demmiz
 </a>
