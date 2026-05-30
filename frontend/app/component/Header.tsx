@@ -61,7 +61,7 @@ const Header = () => {
               href={link.href} 
               className="hover:text-purple-700 dark:hover:text-zinc-100 transition-colors duration-300 relative py-2 group flex items-center gap-0.5"
             >
-              <span className="text-[8px] text-amber-500 dark:text-amber-400 font-mono opacity-0 group-hover:opacity-100 transition-opacity absolute -left-4">
+              <span className="text-[8px] text-purple-700 dark:text-amber-400 font-mono opacity-0 group-hover:opacity-100 transition-opacity absolute -left-4">
                 0{index + 1}
               </span>
               {link.label}
