@@ -48,7 +48,7 @@ const Header = () => {
             demmiz
           </a>
           <span className="hidden sm:inline-block text-[9px] tracking-[0.4em] uppercase font-semibold text-amber-500 dark:text-amber-400/90 [word-spacing:4px]">
-            Haute Parfum
+            Scent Hub
           </span>
         </div>
 
