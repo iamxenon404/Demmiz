@@ -19,10 +19,10 @@ const Footer = () => {
               className="text-4xl md:text-5xl font-normal tracking-wide lowercase text-zinc-900 dark:text-zinc-50 hover:text-purple-700 dark:hover:text-purple-400 transition-colors"
               style={{ fontFamily: "'Playfair Display', 'Didot', 'Bodoni MT', serif", fontStyle: 'italic' }}
             >
-              demmiz
+              demmiz scent hub
             </h3>
             <span className="text-[9px] tracking-[0.4em] uppercase font-bold text-amber-500 dark:text-amber-400 mt-3 block">
-              Scent Hub
+              haute parfumerie
             </span>
           </div>
           <p className="mt-8 text-sm text-zinc-500 dark:text-zinc-400 max-w-sm leading-relaxed tracking-wide font-light">
@@ -43,7 +43,7 @@ const Footer = () => {
             <input 
               type="email" 
               placeholder="Enter your email address" 
-              className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-800 py-3 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:border-purple-700 dark:focus:border-amber-400 transition-colors tracking-wide font-light"
+              className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-800 py-3 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:border-purple-700 dark:focus:border-purple-400 transition-colors tracking-wide font-light"
               required
             />
             <button 
@@ -59,7 +59,7 @@ const Footer = () => {
 
       {/* ========================================================================
         Middle Section: Clean Navigation Matrix
-        ======================================================================= */}
+        ======================================================================== */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6">
         
         {/* Column 1 */}
@@ -112,7 +112,7 @@ const Footer = () => {
       <div className="border-t border-zinc-100 dark:border-zinc-900 text-zinc-400 dark:text-zinc-500 text-[11px] font-light tracking-wider py-10 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="font-mono">
-            &copy; {new Date().getFullYear()} DEMMIZ HAUTE PARFUMERIE. ALL RIGHTS RESERVED.
+            &copy; {new Date().getFullYear()} DEMMIZ SCENT HUB. ALL RIGHTS RESERVED.
           </div>
           
           {/* Trust Matrix Line Indicators */}
