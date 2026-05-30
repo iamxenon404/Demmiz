@@ -48,7 +48,7 @@ const Footer = () => {
             />
             <button 
               type="submit" 
-              className="absolute right-0 bottom-0 py-3 text-xs font-bold uppercase tracking-[0.2em] text-zinc-900 dark:text-zinc-100 hover:text-purple-700 dark:hover:text-purple-400 transition-colors flex items-center gap-1 group"
+              className="absolute right-0 bottom-0 py-3 text-xs font-bold uppercase tracking-[0.2em] text-zinc-900 dark:text-zinc-100 hover:text-purple-700 dark:hover:text-amber-400 transition-colors flex items-center gap-1 group"
             >
               Subscribe
               <ArrowUpRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
