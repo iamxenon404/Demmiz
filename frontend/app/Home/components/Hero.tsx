@@ -34,7 +34,7 @@ const Hero = () => {
   <img
     src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1920"
     alt="Luxury perfume"
-    {/* Added mix-blend-multiply and higher visibility rules for light mode */}
+
     className="w-full h-full object-cover object-center opacity-40 dark:opacity-40 grayscale-[30%] dark:grayscale-[40%] mix-blend-multiply dark:mix-blend-normal"
   />
   {/* Re-balanced gradient: added a subtle zinc tint in light mode to pull out the bottle silhouette */}
