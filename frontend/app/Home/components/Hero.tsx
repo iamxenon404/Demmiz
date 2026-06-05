@@ -27,14 +27,19 @@ const Hero = () => {
             : 'opacity-0 scale-95 pointer-events-none z-0'
         }`}
       >
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1920"
-            alt="Luxury perfume"
-            className="w-full h-full object-cover object-center opacity-25 dark:opacity-40 grayscale-[40%]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/50 to-white dark:from-black/80 dark:via-black/40 dark:to-black" />
-        </div>
+{/* ========================================================================
+  Background Image Layer with High-End Vignette Matrix (Fixed Light Mode)
+  ======================================================================== */}
+<div className="absolute inset-0 z-0">
+  <img
+    src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1920"
+    alt="Luxury perfume"
+    {/* Added mix-blend-multiply and higher visibility rules for light mode */}
+    className="w-full h-full object-cover object-center opacity-40 dark:opacity-40 grayscale-[30%] dark:grayscale-[40%] mix-blend-multiply dark:mix-blend-normal"
+  />
+  {/* Re-balanced gradient: added a subtle zinc tint in light mode to pull out the bottle silhouette */}
+  <div className="absolute inset-0 bg-gradient-to-b from-zinc-100/80 via-white/40 to-white dark:from-black/80 dark:via-black/40 dark:to-black" />
+</div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center px-6 pt-16 flex flex-col items-center">
           <div className="flex items-center gap-3 mb-6">
