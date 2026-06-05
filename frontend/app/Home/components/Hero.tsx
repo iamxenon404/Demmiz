@@ -18,11 +18,13 @@ const Hero = () => {
     <section className="relative w-full h-screen bg-zinc-50 dark:bg-black overflow-hidden antialiased font-sans transition-colors duration-500">
       
       {/* ========================================================================
-        DESIGN 01: Centered Editorial Luxury Title
+        DESIGN 01: Centered Editorial Luxury Title (Default Visible)
         ======================================================================== */}
       <div 
         className={`absolute inset-0 w-full h-full flex items-center justify-center transition-all duration-1000 ease-in-out ${
-          activeDesign === 0 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'
+          activeDesign === 0 
+            ? 'opacity-100 scale-100 pointer-events-auto z-10' 
+            : 'opacity-0 scale-95 pointer-events-none z-0'
         }`}
       >
         <div className="absolute inset-0 z-0">
@@ -60,7 +62,9 @@ const Hero = () => {
         ======================================================================== */}
       <div 
         className={`absolute inset-0 w-full h-full flex items-center transition-all duration-1000 ease-in-out ${
-          activeDesign === 1 ? 'opacity-100 translate-x-0 pointer-events-auto' : 'opacity-0 -translate-x-4 pointer-events-none'
+          activeDesign === 1 
+            ? 'opacity-100 translate-x-0 pointer-events-auto z-10' 
+            : 'opacity-0 -translate-x-8 pointer-events-none z-0'
         }`}
       >
         <div className="max-w-7xl w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -91,16 +95,19 @@ const Hero = () => {
       </div>
 
       {/* ========================================================================
-        DESIGN 03: Minimal Typographic Watermark
+        DESIGN 03: Minimal Typographic Watermark + Fragrance Image Card
         ======================================================================== */}
       <div 
         className={`absolute inset-0 w-full h-full flex items-center transition-all duration-1000 ease-in-out ${
-          activeDesign === 2 ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
+          activeDesign === 2 
+            ? 'opacity-100 translate-y-0 pointer-events-auto z-10' 
+            : 'opacity-0 translate-y-8 pointer-events-none z-0'
         }`}
       >
         <div className="absolute inset-x-0 top-1/3 -translate-y-1/2 select-none pointer-events-none text-center opacity-[0.02] dark:opacity-[0.03] text-[12vw] font-serif font-black tracking-widest text-zinc-950 dark:text-white font-italic">
           demmiz
         </div>
+        
         <div className="max-w-7xl w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-8 flex flex-col items-start">
             <span className="text-[10px] uppercase tracking-[0.4em] font-mono font-bold text-purple-700 dark:text-amber-400 mb-6">[ volume 01 // archive collection ]</span>
@@ -112,6 +119,23 @@ const Hero = () => {
               <a href="/shop" className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-zinc-900 dark:text-zinc-100 hover:text-purple-700 dark:hover:text-amber-400 transition-colors">
                 The Full Index <ArrowUpRight className="w-3.5 h-3.5 text-purple-700 dark:text-amber-400" />
               </a>
+            </div>
+          </div>
+
+          {/* Restored Perfume Image Card for Design 3 */}
+          <div className="lg:col-span-4 w-full hidden lg:flex justify-end">
+            <div className="relative w-full max-w-[280px] aspect-[4/5] bg-white dark:bg-zinc-900 p-4 border border-zinc-200/60 dark:border-zinc-800 shadow-2xl group">
+              <div className="w-full h-full overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+                <img
+                  src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1200"
+                  alt="Minimalist luxury bottle profile"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-90"
+                />
+              </div>
+              <div className="mt-3 flex items-center justify-between text-[9px] font-mono tracking-widest text-zinc-400 uppercase">
+                <span>Extract № 541</span>
+                <span className="text-purple-700 dark:text-amber-400 font-bold">In Stock</span>
+              </div>
             </div>
           </div>
         </div>
