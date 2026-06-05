@@ -1,99 +1,102 @@
 "use client";
 
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-screen flex items-center bg-zinc-50 dark:bg-black overflow-hidden antialiased font-sans transition-colors duration-500">
+    <section className="relative w-full min-h-screen flex flex-col justify-between bg-zinc-50 dark:bg-zinc-950 overflow-hidden antialiased font-sans transition-colors duration-500 pt-32 pb-12">
       
-      {/* Background Texture Lines */}
-      <div className="absolute inset-y-0 left-1/4 w-[1px] bg-zinc-200/60 dark:bg-zinc-900/40 hidden lg:block" />
-      <div className="absolute inset-y-0 left-1/2 w-[1px] bg-zinc-200/60 dark:bg-zinc-900/40 hidden lg:block" />
+      {/* Huge Background Watermark Text for Luxury Vibe */}
+      <div className="absolute inset-x-0 top-1/3 -translate-y-1/2 select-none pointer-events-none text-center opacity-[0.02] dark:opacity-[0.03] text-[12vw] font-serif font-black tracking-widest text-zinc-950 dark:text-white font-italic">
+        demmiz
+      </div>
 
-      <div className="max-w-7xl w-full mx-auto px-6 md:px-12 py-32 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      {/* Top Border Framing Line */}
+      <div className="max-w-7xl w-full mx-auto px-6 md:px-12 hidden md:block">
+        <div className="w-full h-[1px] bg-zinc-200 dark:bg-zinc-800" />
+      </div>
+
+      {/* ========================================================================
+        Main Content Layout Matrix
+        ======================================================================== */}
+      <div className="max-w-7xl w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto relative z-10">
         
-        {/* ========================================================================
-          Left Side: Editorial Brand Copy
-          ======================================================================== */}
-        <div className="lg:col-span-7 flex flex-col items-start text-left">
-          
-          <div className="inline-flex items-center gap-2 mb-6 px-3 py-1 bg-purple-50 dark:bg-zinc-900/80 rounded-full border border-purple-100 dark:border-zinc-800">
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-700 dark:bg-amber-400 animate-pulse" />
-            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-purple-800 dark:text-zinc-300">
-              Maison Demmiz Scent Hub
-            </span>
-          </div>
+        {/* Left/Center Text Segment */}
+        <div className="lg:col-span-8 flex flex-col items-start">
+          <span className="text-[10px] uppercase tracking-[0.4em] font-mono font-bold text-purple-700 dark:text-amber-400 mb-6">
+            [ volume 01 // archive collection ]
+          </span>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-light text-zinc-900 dark:text-white tracking-tight uppercase leading-[1.05] max-w-2xl">
-            Scent profiles <br />
-            that sculpt <br />
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-light text-zinc-900 dark:text-zinc-50 tracking-tight leading-[1.1] uppercase max-w-3xl">
+            unearth scents <br />
+            that echo in <br />
             <span 
-              className="text-purple-700 dark:text-amber-400 lowercase font-normal"
+              className="text-purple-700 dark:text-amber-400 lowercase font-normal block sm:inline"
               style={{ fontFamily: "'Playfair Display', 'Didot', 'Bodoni MT', serif", fontStyle: 'italic' }}
             >
               your
             </span>{" "}
-            legacy.
+            absence.
           </h1>
 
-          <p className="mt-8 text-sm sm:text-base text-zinc-500 dark:text-zinc-400 max-w-md leading-relaxed font-light tracking-wide">
-            An elite digital archive dedicated to pure rare extracts, vault-sourced niche releases, and private custom hand-poured decants.
+          <p className="mt-8 text-sm sm:text-base text-zinc-500 dark:text-zinc-400 max-w-lg leading-relaxed font-light tracking-wide">
+            Demmiz Scent Hub bridges the gap between raw olfactory artistry and true luxury. Access premium signature decants, rare vintage profiles, and vaulted niche houses.
           </p>
 
-          {/* Interactive Button Group */}
-          <div className="mt-10 flex flex-wrap items-center gap-6 w-full">
+          {/* Clean Action Bars */}
+          <div className="mt-12 flex items-center gap-8 border-t border-zinc-200 dark:border-zinc-800 pt-8 w-full max-w-md">
             <a
               href="/shop"
-              className="px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 text-xs font-bold uppercase tracking-[0.2em] hover:bg-purple-700 dark:hover:bg-amber-400 hover:text-white dark:hover:text-zinc-950 transition-colors duration-300 shadow-sm"
+              className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-zinc-900 dark:text-zinc-100 hover:text-purple-700 dark:hover:text-amber-400 transition-colors"
             >
-              Explore Collection
+              The Full Index
+              <ArrowUpRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-purple-700 dark:text-amber-400" />
             </a>
             
+            <span className="text-zinc-300 dark:text-zinc-700 font-light">/</span>
+
             <a
               href="/decants"
-              className="px-6 py-4 bg-transparent text-zinc-900 dark:text-zinc-300 text-xs font-bold uppercase tracking-[0.2em] hover:text-purple-700 dark:hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"
+              className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-zinc-400 dark:text-zinc-500 hover:text-purple-700 dark:hover:text-amber-400 transition-colors"
             >
-              Request Samples
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-zinc-700 group-hover:bg-purple-700 dark:group-hover:bg-amber-400 transition-colors" />
+              Niche Decants
             </a>
           </div>
-
         </div>
 
-        {/* ========================================================================
-          Right Side: Framed Luxury Imagery
-          ======================================================================== */}
-        <div className="lg:col-span-5 w-full relative flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-sm aspect-[3/4] overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-3 shadow-2xl">
-            <div className="absolute inset-0 z-10 bg-gradient-to-t from-zinc-950/20 to-transparent mix-blend-multiply" />
-            <img
-              src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1200"
-              alt="Luxury bottle art profile"
-              className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 dark:opacity-90 transition-all duration-700"
-            />
-          </div>
-
-          {/* Abstract floating counter indicator */}
-          <div className="absolute -bottom-6 -left-6 bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 px-5 py-4 hidden sm:block shadow-lg">
-            <span className="block font-mono text-[10px] text-purple-700 dark:text-amber-400 font-bold tracking-widest uppercase">Est. Archive</span>
-            <span className="block text-xl font-light text-zinc-900 dark:text-white mt-1">№ 2026</span>
+        {/* Right Floating Micro-Media Card */}
+        <div className="lg:col-span-4 w-full flex justify-center lg:justify-end">
+          <div className="relative w-full max-w-[280px] aspect-[4/5] bg-white dark:bg-zinc-900 p-4 border border-zinc-200/60 dark:border-zinc-800 shadow-[0_15px_40px_rgba(0,0,0,0.04)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] group">
+            <div className="w-full h-full overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+              <img
+                src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1200"
+                alt="Minimalist luxury bottle profile"
+                className="w-full h-full object-cover scale-100 group-hover:scale-105 grayscale group-hover:grayscale-0 transition-all duration-700 opacity-90"
+              />
+            </div>
+            {/* Fine print caption below the image */}
+            <div className="mt-3 flex items-center justify-between text-[9px] font-mono tracking-widest text-zinc-400 uppercase">
+              <span>Extract № 541</span>
+              <span className="text-purple-700 dark:text-amber-400 font-bold">In Stock</span>
+            </div>
           </div>
         </div>
 
       </div>
 
       {/* ========================================================================
-        Bottom Panel: Minimal Scroll Prompt & Spec Line
+        Bottom Section: Architectural Spec Frame
         ======================================================================== */}
-      <div className="absolute bottom-8 left-0 w-full z-10 px-6 md:px-12 flex justify-between items-center border-t border-zinc-200/40 dark:border-zinc-900/40 pt-4">
-        <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] font-mono text-zinc-400 dark:text-zinc-500">
-          <span>[ 100% Verified Sourcing ]</span>
+      <div className="max-w-7xl w-full mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-zinc-200 dark:border-zinc-900 pt-8 text-[10px] uppercase tracking-[0.2em] font-medium text-zinc-400 dark:text-zinc-500 font-mono">
+        <div>
+          <span className="text-purple-700 dark:text-amber-400 font-bold mr-1">01 /</span> Authenticity Guaranteed
         </div>
-        
-        <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 dark:text-zinc-400 animate-bounce">
-          <span>Scroll down</span>
-          <ArrowDown className="w-3 h-3 text-purple-700 dark:text-amber-400" />
+        <div className="md:text-center">
+          <span className="text-purple-700 dark:text-amber-400 font-bold mr-1">02 /</span> Worldwide Insured Shipping
+        </div>
+        <div className="md:text-right">
+          <span className="text-purple-700 dark:text-amber-400 font-bold mr-1">03 /</span> Small-Batch Hand Decanting
         </div>
       </div>
 
