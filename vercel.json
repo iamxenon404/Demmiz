@@ -4,6 +4,13 @@
       "root": "frontend",
       "routePrefix": "/",
       "framework": "nextjs"
+    },
+    "backend": {
+      "root": "backend",
+      "routePrefix": "/_/backend",
+      "framework": "nestjs",
+      "entrypoint": "src/main.ts",
+      "runtime": "nodejs"
     }
   }
 }
