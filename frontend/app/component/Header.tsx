@@ -31,9 +31,9 @@ const Header = () => {
 
   return (
     <header 
-      className={`w-full fixed top-0 left-0 z-50 antialiased font-sans transition-all duration-500 ${
+      className={`w-full fixed top-0 left-0 z-50 antialiased font-sans transition-all duration-500 border-b border-purple-600 dark:border-amber-400 ${
         isScrolled 
-          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-purple-600 dark:border-amber-400 h-20' 
+          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-xl h-20' 
           : 'bg-white dark:bg-black h-24'
       }`}
     >
