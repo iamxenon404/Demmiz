@@ -33,7 +33,7 @@ const Header = () => {
     <header 
       className={`w-full fixed top-0 left-0 z-50 antialiased font-sans transition-all duration-500 ${
         isScrolled 
-          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-zinc-100 dark:border-zinc-900 h-20' 
+          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-purple-600 dark:border-amber-400 h-20' 
           : 'bg-white dark:bg-black h-24'
       }`}
     >
